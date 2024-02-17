@@ -8,21 +8,22 @@ export default class ExpenseItem extends Component {
       <div>
         <li className='item'>
             <div className='info'>
-             <span className='expense'>빵</span>
-             <span className='amount'>100원</span>
+             <span className='expense'>{this.props.expense.charge}</span>
+             <span className='amount'>{this.props.expense.amount}</span>
             </div>
 
         <div>
             <button
             className='edit-btn'
             >
-                < MdEdit/>
+              < MdEdit/>
                 
             </button>
             <button
-            className='clear-btn'
+              onClick={() => this.props.handleDelete(this.props.expense.id)}
+              className='clear-btn'
             >
-                <MdDelete />
+              <MdDelete />
             </button>
         </div>
         </li>
