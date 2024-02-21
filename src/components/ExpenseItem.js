@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import './ExpenseItem.css'
 import {MdDelete,MdEdit} from 'react-icons/md';
 
-export default class ExpenseItem extends Component {
-  render() {
-    return (
-      <div>
-        <li className='item'>
+
+const ExpenseItem = (props) => {
+  return (
+    
+       <li className='item'>
             <div className='info'>
-             <span className='expense'>{this.props.expense.charge}</span>
-             <span className='amount'>{this.props.expense.amount}</span>
+             <span className='expense'>{props.expense.charge}</span>
+             <span className='amount'>{props.expense.amount}</span>
             </div>
 
         <div>
@@ -25,9 +25,10 @@ export default class ExpenseItem extends Component {
             >
               <MdDelete />
             </button>
-        </div>
-        </li>
       </div>
-    )
-  }
+    </li>
+  )
 }
+
+export default ExpenseItem
+
